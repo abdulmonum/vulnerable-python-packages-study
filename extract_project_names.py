@@ -1,6 +1,7 @@
 import re
-import sys
+import sys, os
 
+# Method to parse awesome-python README and extract github project names
 def extract_project_names(filename):
     with open(filename) as f:
         content = f.readlines()
@@ -28,19 +29,35 @@ def extract_project_names(filename):
     return project_names
 
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python3 extract_project_names.py <filename>")
-        sys.exit(1)
-    filename = sys.argv[1]
-    project_names = extract_project_names(filename)
+# Method to output content to a file
+def outputToFile(filepath, content):
 
-    #write project_names to file "project_names.txt"
-    with open("project_names.txt", "w") as f:
-        for project_name in project_names:
-            f.write(project_name + "\n") 
+    with open(filepath, 'w') as f:
+        f.write(content)
 
+
+def main(filepath):
     
+    project_names = extract_project_names(filepath)
+
+    outputToFile('project_names.txt', "\n".join(project_names))
+
+
 
 if __name__ == "__main__":
-    main()
+    try:
+        # Input validation
+        if len(sys.argv) != 2:
+            print("Usage: python3 extract_project_names.py <full-path-to-file>")
+            sys.exit(1)
+        if os.path.exists(sys.argv[1]) == False:
+            print("The following path to file does not exist:", sys.argv[1])
+            print("Usage: python3 extract_project_names.py <full-path-to-file>")
+            sys.exit(1)
+
+        main(sys.argv[1])
+    
+    except KeyboardInterrupt:
+        print(f'\nUnexpected Error: {KeyboardInterrupt}.\nShutting Down...')
+        
+        sys.exit(0)

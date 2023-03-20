@@ -761,7 +761,7 @@ Inspired by [awesome-php](https://github.com/ziadoz/awesome-php).
 * [pillow](https://github.com/python-pillow/Pillow) - Pillow is the friendly [PIL](http://www.pythonware.com/products/pil/) fork.
 * [python-barcode](https://github.com/WhyNotHugo/python-barcode) - Create barcodes in Python with no extra dependencies.
 * [pygram](https://github.com/ajkumar25/pygram) - Instagram-like image filters.
-* [PyMatting](http://github.com/pymatting/pymatting) - A library for alpha matting.
+* [PyMatting](https://github.com/pymatting/pymatting) - A library for alpha matting.
 * [python-qrcode](https://github.com/lincolnloop/python-qrcode) - A pure Python QR Code generator.
 * [pywal](https://github.com/dylanaraps/pywal) - A tool that generates color schemes from images.
 * [pyvips](https://github.com/libvips/pyvips) - A fast image processing library with low memory needs.

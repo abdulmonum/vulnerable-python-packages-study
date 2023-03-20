@@ -8,14 +8,20 @@ def extract_project_names(filename):
     project_names = []
     for line in content:
         project_name = ""
-        if line.find("https://github.com") != -1:
-            url = re.findall(r'(https?://\S+)', line)[0]
+        if "https://github.com" in line:
+            url = re.findall(r'(https:\/\/github\S+)', line)[0]
             if url.find(").*") != -1:
                 continue
-            project_name = url[19:-1]
-            project_name = project_name.replace("/", "_")
+            project_name = url[19:-1].replace("/", "_")
+            if(project_name[-1]) == '_' or project_name[-1] == ')':
+                project_name = project_name[:-1]
             project_names.append(project_name)
 
+
+    #remove irrelevant github repo links
+    for i in range(2):
+        project_names.pop(0)
+    
     for i in range(4):
         project_names.pop(-1)
 

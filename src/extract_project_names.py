@@ -1,6 +1,7 @@
 import re
 import sys, os
 
+
 # Method to parse awesome-python README and extract github project names
 def extract_project_names(filename):
     with open(filename) as f:
@@ -40,7 +41,8 @@ def main(filepath):
     
     project_names = extract_project_names(filepath)
 
-    outputToFile('project_names.txt', "\n".join(project_names))
+    outputToFile('/home/amonum/vulnerable-python-packages-study/output/project_names.txt', "\n".join(project_names))
+
 
 
 

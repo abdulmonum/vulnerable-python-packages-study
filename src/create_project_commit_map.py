@@ -59,7 +59,7 @@ def create_project_commit_map(project_names):
     for project_name in project_names:
         
         # Get project commits
-        project_commits = [Commit(commit) for commit in Project(project_name).commit_shas]
+        project_commits = [Commit(commitcd ..) for commit in Project(project_name).commit_shas]
 
         commits_with_requirements = []
 
